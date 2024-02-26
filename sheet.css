@@ -1,13 +1,13 @@
 .home{
     position: relative;
-    height: 50px;
+    height: 100px;
     display: flex;
     align-items: center;
     padding: 50px 10% 0;
 }
 .table{
     position: relative;
-    height: 500px;
+    height: 550px;
     display: flex;
     align-items: center;
     padding: 50px 10% 0;
