@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week Parity Timetable</title>
+    <link rel="stylesheet" href="sheet.css">
+</head>
+<body>
+    <a href="fulltable.html">
+        <button>Timetable</button>
+    </a><br>
+    <section class="home">
+        <a href="odd.html">
+            <button>26 February - 3 March</button>
+        </a><br>
+        <a href="even.html">
+            <button>4 march - 10 March</button>
+        </a><br>
+        <a href="odd.html">
+            <button>11 March - 17 March</button>
+        </a><br>
+        <a href="even.html">
+            <button>18 March - 24 March</button>
+        </a><br>
+        <a href="odd.html">
+            <button>25 March - 31 March</button>
+        </a><br>
+        <a href="even.html">
+            <button>1 April - 7 April</button>
+        </a><br>
+        <a href="odd.html">
+            <button>8 April - 14 April</button>
+        </a><br>
+        <a href="even.html">
+            <button>15 April - 21 April</button>
+        </a><br>
+        <a href="odd.html">
+            <button>22 April - 28 April</button>
+        </a><br>
+        <a href="even.html">
+            <button>29 April - 5 May</button>
+        </a><br>
+        <a href="odd.html">
+            <button>6 May - 12 May</button>
+        </a><br>
+        <a href="even.html">
+            <button>13 May - 19 May</button>
+        </a><br>
+        <a href="odd.html">
+            <button>20 May - 26 May</button>
+        </a><br>
+        <a href="even.html">
+            <button>27 May - 2 June</button>
+        </a>
+     </section>
+
+    <div id="content"></div>
+    
+    <script>
+        function isOddWeek(date) {
+            const weekNumber = Math.floor((date.getDate() - 1) / 7);
+            return weekNumber % 2 !== 0;
+        }
+
+        function loadTimetable() {
+            const currentDate = new Date();
+            const isOdd = isOddWeek(currentDate);
+
+            const contentDiv = document.getElementById('content');
+
+            const timetableFile = isOdd ? 'odd.html' : 'even.html';
+
+            fetch(timetableFile)
+                .then(response => response.text())
+                .then(htmlContent => {
+                    contentDiv.innerHTML = htmlContent;
+                })
+                .catch(error => {
+                    console.error('Error loading timetable:', error);
+                });
+        }
+
+        loadTimetable();
+    </script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+.home{
+    position: relative;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    padding: 50px 10% 0;
+}
+.table{
+    position: relative;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    padding: 50px 10% 0;
+}
+table, th, td{
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
